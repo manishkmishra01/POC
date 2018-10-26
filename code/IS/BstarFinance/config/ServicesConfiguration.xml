@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceConfigurationRoot>
+	<!-- Example node"," please COPY only and use this as a base
+		<Service>
+			<ServiceName></ServiceName>
+			<ServiceHeader>
+				<operationType></operationType>
+				<businessService></businessService>
+				<destinationID></destinationID>
+				<destinationLocation></destinationLocation>
+				<sourceID></sourceID>
+				<sourceLocation></sourceLocation>
+				<notificationID></NotificationID>
+				<documentType></DocumentType>
+				<republish></Republish>
+			</ServiceHeader>
+			<Properties>
+
+			</Properties>
+		</Service>
+	 -->
+	<Service>
+		<ServiceName>BstarFinance.services:createMemo</ServiceName>
+		<Properties>
+			<JMSDetails>
+				<connectionAliasName>BstarFinance_JMS_Connection</connectionAliasName>
+				<destinationName>\Finance\MemoNotificationT</destinationName>
+				<destinationType>TOPIC</destinationType>
+			</JMSDetails>
+		</Properties>
+	</Service>
+</ServiceConfigurationRoot>
