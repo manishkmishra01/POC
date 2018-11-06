@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">trackShipmentRequest</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">BstarShipment.documents:trackShipmentRequest</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">shipment</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">BstarCanonical.CDM.Shipment:shipment</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">trackShipmentRequest</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">BstarShipment.documents:trackShipmentRequest</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/transactionID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Identifier;2;0/@TrackingID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/customerID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Destination;2;0/@Company;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/programID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Identifier;2;0/@SequenceID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/channelID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Identifier;2;0/@BatchID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/country;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Destination;2;0/@Location;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/inerfaceName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/@Entity;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/operationName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/@BusinessService;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/actions;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/@Verb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/trackShipmentRequest;4;0;BstarShipment.documents:trackShipmentRequest/body;2;0/trackingNumber;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentDeliveryDateDetails;2;0/@TrackingID;1;0">
+</MAPCOPY>
+</MAP>
+</FLOW>

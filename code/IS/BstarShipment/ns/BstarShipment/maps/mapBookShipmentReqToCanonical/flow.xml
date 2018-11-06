@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">bookShipmentRequest</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">BstarShipment.documents:bookShipmentRequest</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">shipment</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">BstarCanonical.CDM.Shipment:shipment</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">bookShipmentRequest</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">BstarShipment.documents:bookShipmentRequest</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/referenceId;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ID;2;0/@ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipmentDate;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:Attribute;2;1/@Date;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/accountId;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountID;2;0/@ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/accountName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/@PartyAccountName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactAddress;2;0/addressLine1;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:AddressLine1;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactAddress;2;0/addressLine2;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:Addressline2;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactAddress;2;0/city;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:City;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactAddress;2;0/state;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:State;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactAddress;2;0/country;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:Country;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactAddress;2;0/zip;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:ZIPPostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/name;2;0/prefix;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:NamePrefix;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/name;2;0/firstName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:FirstName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/name;2;0/middleName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:MiddleName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/name;2;0/lastName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:LastName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/name;2;0/suffix;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:NameSuffix;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/simpleName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyContactPerson;2;1/com1:SimpleName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipFrom;2;0/contactPerson;2;0/contactNo;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:AddressContactsSet;2;0/add1:AddressContacts;2;1/add1:TelephoneNumberSet;2;0/add1:TelephoneNumber;2;1/*body;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/accountId;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountID;2;0/@ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/accountName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/@PartyAccountName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactAddress;2;0/addressLine1;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:AddressLine1;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactAddress;2;0/addressLine2;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:Addressline2;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactAddress;2;0/city;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:City;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactAddress;2;0/state;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:State;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactAddress;2;0/country;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:Country;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactAddress;2;0/zip;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:ZIPPostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/name;2;0/prefix;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:NamePrefix;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/name;2;0/firstName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:FirstName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/name;2;0/middleName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:MiddleName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/name;2;0/lastName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:LastName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/name;2;0/suffix;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyContactPerson;2;1/com1:Name;2;0/com1:NameSuffix;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/simpleName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyContactPerson;2;1/com1:SimpleName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipTo;2;0/contactPerson;2;0/contactNo;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipToPartyReference;2;0/com1:PartyAccountContactAddress;2;0/add1:AddressContactInformation;2;0/add1:AddressContactsSet;2;0/add1:AddressContacts;2;1/add1:TelephoneNumberSet;2;0/add1:TelephoneNumber;2;1/*body;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/itemIdentifier;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:ItemIdentifier;2;0/com1:ID;2;0/@ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/name;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:Name;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/shortDescription;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:ShortDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/longDescription;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:LongDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/itemVolume;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:ItemVolume;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/itemVolumeUOM;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:ItemVolumeUOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/itemWeight;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:ItemWeight;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/itemWeightUOM;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipmentItem;2;0/shipi1:ItemReference;2;0/com1:ItemWeightUOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/DGFlag;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/@HazardousMaterialIndicator;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/shipmentType;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/@NameTypeCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/itemDetails;2;1/DGShippingCode;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/@DockCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/body;2;0/customerId;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageBody;2;0/ship1:ShipFromPartyReference;2;0/com1:PartyAccountContactID;2;0/@ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/country;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Destination;2;0/@Location;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/transactionID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Identifier;2;0/@TrackingID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/inerfaceName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/@Entity;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/channelID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Identifier;2;0/@BatchID;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/operationName;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/@BusinessService;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/actions;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/@Verb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/customerID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Destination;2;0/@Company;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/bookShipmentRequest;4;0;BstarShipment.documents:bookShipmentRequest/header;4;0;BstarCanonical.CDM.Header:apiHeader/programID;1;0" TO="/shipment;4;0;BstarCanonical.CDM.Shipment:shipment/ship1:Shipment;2;0/ship1:MessageHeader;2;0/com1:Identifier;2;0/@SequenceID;1;0">
+</MAPCOPY>
+</MAP>
+</FLOW>
