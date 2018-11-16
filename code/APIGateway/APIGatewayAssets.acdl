@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite name="APIGatewayAssets" displayName="Assets for API Gateway" runtimeVersion="10.1" targetNamespace="http://namespaces.softwareag.com/webMethods/APIGateway" xmlns="http://namespaces.softwareag.com/acdl/1.0" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:APIPORTAL="http://namespaces.softwareag.com/webMethods/APIPORTAL" xmlns:AgileApps="http://namespaces.softwareag.com/webMethods/AgileApps" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/BROKER" xmlns:implDetails="http://namespaces.softwareag.com/acdl/implDetails" xmlns:UniversalMessaging="http://namespaces.softwareag.com/webMethods/UniversalMessaging" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize">
+    <buildInfo name="BuildTimestamp" value="2018-11-14T05:37:07"/>
+    <asset name="API.bdeb2e2c-c755-461f-942c-979b32beedd6" displayName="Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="API"/>
+        <dependsOn>APIGateway:Application.977f8608-11b9-4e4a-8317-e44539395a14</dependsOn>
+        <dependsOn>APIGateway:Application.e26776b4-f279-4329-9d90-7abed5a1fce5</dependsOn>
+        <dependsOn>APIGateway:Policy.450fa887-dad0-4e12-92c8-0c244ad5c889</dependsOn>
+    </asset>
+    <asset name="Policy.450fa887-dad0-4e12-92c8-0c244ad5c889" displayName="Policy For API Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="Policy"/>
+        <dependsOn>APIGateway:PolicyAction.0dea0160-35f9-4a58-95b8-73711c9909cf</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.45ecf2b7-70dd-4e9f-9b89-0582eaf834a8</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.7cf53db1-4d15-4e90-bbf3-dbc260548d7e</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.b10a574d-63e5-417b-afe6-62fdb8ca4c22</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.b1f9057a-450b-4593-8d10-a2f498bd4a56</dependsOn>
+    </asset>
+    <asset name="PolicyAction.b1f9057a-450b-4593-8d10-a2f498bd4a56" displayName="Policy Action [Context-based Routing] -&gt; Policy For API Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.86d3fc23-5fe7-4642-b988-a174c3e25214</dependsOn>
+    </asset>
+    <asset name="Alias.86d3fc23-5fe7-4642-b988-a174c3e25214" displayName="BS_ESB_IS" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <property name="value for Simple alias BS_ESB_IS" many="false" isSecure="false" displayName="value for Simple alias BS_ESB_IS">
+            <value>N01UE1ELDESB01.brightstarcorp.com:5567</value>
+        </property>
+    </asset>
+    <asset name="PolicyAction.7cf53db1-4d15-4e90-bbf3-dbc260548d7e" displayName="Policy Action [Custom HTTP Header] -&gt; Policy For API Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.0dea0160-35f9-4a58-95b8-73711c9909cf" displayName="Policy Action [Log Invocation] -&gt; Policy For API Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.b10a574d-63e5-417b-afe6-62fdb8ca4c22" displayName="Policy Action [Identify &amp; Authorize Application] -&gt; Policy For API Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.45ecf2b7-70dd-4e9f-9b89-0582eaf834a8" displayName="Policy Action [Require HTTP / HTTPS] -&gt; Policy For API Shipment[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="Application.e26776b4-f279-4329-9d90-7abed5a1fce5" displayName="Shipment" isDeployable="true">
+        <implementation.generic type="Application"/>
+    </asset>
+    <asset name="Application.977f8608-11b9-4e4a-8317-e44539395a14" displayName="Beesion (EN)" isDeployable="true">
+        <implementation.generic type="Application"/>
+    </asset>
+</asset_composite>

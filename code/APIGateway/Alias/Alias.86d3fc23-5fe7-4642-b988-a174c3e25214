@@ -1,0 +1,8 @@
+{
+  "type" : "simple",
+  "id" : "86d3fc23-5fe7-4642-b988-a174c3e25214",
+  "name" : "BS_ESB_IS",
+  "description" : "This alias contains the host name of ESB IS.",
+  "type" : "simple",
+  "value" : "N01UE1ELDESB01.brightstarcorp.com:5567"
+}

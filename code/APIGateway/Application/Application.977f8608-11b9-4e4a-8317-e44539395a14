@@ -1,0 +1,28 @@
+{
+  "applicationID" : "977f8608-11b9-4e4a-8317-e44539395a14",
+  "name" : "Beesion (EN)",
+  "description" : "",
+  "owner" : "default:5d47e18f-0528-3ff3-b539-40fa7a3222ec",
+  "identifiers" : [ ],
+  "accessTokens" : {
+    "apiAccessKey" : {
+      "apiAccessKey" : "1fe6a4b9-ca36-4213-84e1-e4c90b60ad98"
+    },
+    "oauth2Token" : {
+      "type" : "confidential",
+      "clientId" : "3f8d9af9-273d-48a7-9f3a-4f4b3a02c7c4",
+      "clientSecret" : "afdba0b6-88db-4b2a-9b65-6f03687193d2",
+      "clientName" : "Beesion (EN)-e5de9f16-d1f9-43b6-9719-49cf678089df",
+      "scopes" : [ "bdeb2e2c-c755-461f-942c-979b32beedd6" ],
+      "expirationInterval" : "3600",
+      "refreshCount" : "0",
+      "accessTokenRequestURI" : [ ],
+      "redirectUris" : [ "https://n01lsbsag03.brightstarcorp.com:18102/abs/apiportalext/v1/oauth2/callback" ]
+    }
+  },
+  "creationDate" : "2018-03-09 04:53:57 GMT",
+  "siteURLs" : [ ],
+  "version" : "1.0",
+  "redirectUris" : [ "https://n01lsbsag03.brightstarcorp.com:18102/abs/apiportalext/v1/oauth2/callback" ],
+  "subscription" : false
+}

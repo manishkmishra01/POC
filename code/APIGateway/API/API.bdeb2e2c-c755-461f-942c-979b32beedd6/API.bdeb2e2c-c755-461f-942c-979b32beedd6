@@ -1,0 +1,470 @@
+{
+  "type" : "REST",
+  "apiDefinition" : {
+    "type" : "rest",
+    "info" : {
+      "vendorExtensions" : { },
+      "description" : "This API will provide the Shipment services.",
+      "version" : "1.0",
+      "title" : "Shipment"
+    },
+    "host" : "${BS_ESB_IS}",
+    "basePath" : "/rest/BstarShipment/restresources",
+    "schemes" : [ "http", "https" ],
+    "consumes" : [ "application/json" ],
+    "produces" : [ "application/json" ],
+    "security" : [ {
+      "requirements" : { }
+    } ],
+    "paths" : {
+      "/schedulePickup" : {
+        "post" : {
+          "summary" : "Schedule Pickup",
+          "description" : "This API is used to scheduling a Pickup",
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "schedulePickup",
+            "required" : true,
+            "allowEmptyValue" : false,
+            "readOnly" : false,
+            "schema" : {
+              "application/json" : {
+                "schema" : "{\"allowEmptyValue\":false,\"example\":\"\\\"{\\\\\\\"schedulePickupRequest\\\\\\\":{\\\\\\\"header\\\\\\\":{\\\\\\\"country\\\\\\\": \\\\\\\"USA\\\\\\\",\\\\\\\"transactionID\\\\\\\": \\\\\\\"12345ABC\\\\\\\", \\\\\\\"interfaceName\\\\\\\": \\\\\\\"Shipment\\\\\\\", n \\\\\\\"operationName\\\\\\\": \\\\\\\"schedulePickup\\\\\\\", \\\\\\\"actions\\\\\\\": \\\\\\\"schedulePickup\\\\\\\", \\\\\\\"customerID\\\\\\\": \\\\\\\"Beesion\\\\\\\", \\\\\\\"programID\\\\\\\":\\\\\\\"Verso\\\\\\\", n\\\\\\\"channelID\\\\\\\":\\\\\\\"Lease\\\\\\\", \\\\\\\"source\\\\\\\":\\\\\\\"Beesion\\\\\\\", \\\\\\\"target\\\\\\\":\\\\\\\"ERP\\\\\\\", \\\\\\\"timestamp\\\\\\\":\\\\\\\"2017-10-23\\\\\\\"},\\\\\\\"body\\\\\\\":n {\\\\\\\"trackingNumber\\\\\\\":\\\\\\\"1234\\\\\\\", \\\\\\\"pickUpDateTime\\\\\\\":\\\\\\\"2017-10-23\\\\\\\"}}}\\\"\",\"properties\":{\"schedulePickupRequest\":{\"$ref\":\"#/definitions/schedulePickupRequest\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"schedulePickupRequest\",\"type\":\"ref\"}},\"type\":\"object\",\"uniqueItems\":false}",
+                "type" : "StringSchemaModel"
+              }
+            },
+            "examples" : { }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Successful",
+              "schema" : {
+                "application/json" : {
+                  "type" : "ref",
+                  "$ref" : "#/definitions/schedulePickupResponse",
+                  "simpleRef" : "schedulePickupResponse",
+                  "refFormat" : "INTERNAL"
+                }
+              }
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "mockedResponses" : {
+            "200" : {
+              "responseBody" : {
+                "application/json" : "{\"barCode\":\"qTlNAwPFi\",\"expectedDeliveryDate\":\"Fp\",\"pickUpDateTime\":\"u\",\"shipFrom\":{\"accountName\":\"wfF\",\"contactAddress\":{\"addressLine1\":\"jpkduHPiGUuRJ\",\"addressLine2\":\"GQo\",\"city\":\"juwcuKgx\",\"country\":\"\",\"postalCode\":\"bUHlBoBDSE\",\"state\":\"qum\"}},\"shipTo\":{\"accountName\":\"OTcBOLhB\",\"contactAddress\":{\"addressLine1\":\"EkPiTpJq\",\"addressLine2\":\"uQlfoWVXxxwOB\",\"city\":\"AxOf\",\"country\":\"WABgipxMFtq\",\"postalCode\":\"iMUpCkCO\",\"state\":\"TYuLbIfjkAwu\"}},\"shipmentStatus\":\"itlqXWvIOHGIu\",\"shipmentType\":\"IGCHXSvO\",\"shippingMethod\":\"p\",\"trackingNumber\":\"bCTShuXdVBtvD\"}"
+              }
+            },
+            "401" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            }
+          },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ]
+        },
+        "scopes" : [ ],
+        "displayName" : "/schedulePickup",
+        "enabled" : true
+      },
+      "/sendShipmentManifest" : {
+        "post" : {
+          "summary" : "Shipment Updates",
+          "description" : "This service will be used for used by transportation company to send manifest data.",
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "sendShipmentUpdates",
+            "required" : true,
+            "allowEmptyValue" : false,
+            "readOnly" : false,
+            "schema" : {
+              "application/json" : {
+                "schema" : "{\"allowEmptyValue\":false,\"example\":\"\\\"\\\"\",\"properties\":{\"sendShipmentUpdatesRequest\":{\"$ref\":\"#/definitions/sendShipmentManifestRequest\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"sendShipmentManifestRequest\",\"type\":\"ref\"}},\"type\":\"object\",\"uniqueItems\":false}",
+                "type" : "StringSchemaModel"
+              }
+            },
+            "examples" : { }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Successful"
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "mockedResponses" : {
+            "200" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            },
+            "401" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            }
+          },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ]
+        },
+        "scopes" : [ ],
+        "displayName" : "/sendShipmentManifest",
+        "enabled" : true
+      },
+      "/generateShippingLabel" : {
+        "post" : {
+          "summary" : "Label generation",
+          "description" : "This API will be used to retrieve the shipping label information",
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "generateShippingLabel",
+            "required" : true,
+            "allowEmptyValue" : false,
+            "readOnly" : false,
+            "schema" : {
+              "application/json" : {
+                "schema" : "{\"allowEmptyValue\":false,\"properties\":{\"generateShippingLabelRequest\":{\"$ref\":\"#/definitions/generateShippingLabelRequest\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"generateShippingLabelRequest\",\"type\":\"ref\"}},\"type\":\"object\",\"uniqueItems\":false}",
+                "type" : "StringSchemaModel"
+              }
+            },
+            "examples" : {
+              "application/json" : "{\"generateShippingLabelRequest\":{\"header\":{\"country\": \"USA\",\"transactionID\": \"12345ABC\", \"interfaceName\": \"Shipment\", \"operationName\": \"generateShippingLabel\", \"actions\": \"generateShippingLabel\", \"customerID\": \"Beesion\", \"programID\":\"Verso\", \"channelID\":\"Lease\", \"source\":\"Beesion\", \"target\":\"ERP\", \"timestamp\":\"2017-10-23\"},\"body\": {\"trackingNumber\":\"1234\", \"referenceId\":\"1245\", \"RMANumber\":\"RMA123\"}}}"
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Successful",
+              "schema" : {
+                "application/json" : {
+                  "type" : "ref",
+                  "$ref" : "#/definitions/generateShippingLabelResponse",
+                  "simpleRef" : "generateShippingLabelResponse",
+                  "refFormat" : "INTERNAL"
+                }
+              }
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "mockedResponses" : {
+            "200" : {
+              "responseBody" : {
+                "application/json" : "{\"barCode\":\"BWgfUQoGOeIC\",\"customerId\":\"bPtHyLi\",\"expectedDeliveryDate\":\"uUrO\",\"imageURL\":\"WJn\",\"labelFormat\":\"hLAXL\",\"referenceId\":\"yC\",\"shipFrom\":{\"accountId\":\"Re\",\"accountName\":\"FNfnYTeHSkl\",\"contactAddress\":{\"addressLine1\":\"jgablj\",\"addressLine2\":\"idVQSKfAxDPWTf\",\"city\":\"OGAdMAaHLKr\",\"country\":\"iqkKCSJcQY\",\"postalCode\":\"Tun\",\"state\":\"fFACLdqma\"},\"contactPerson\":{\"contactNo\":\"JITaVRmWpcKk\",\"name\":{\"firstName\":\"li\",\"lastName\":\"fEkTt\",\"middleName\":\"lisJMdcnUc\",\"prefix\":\"D\",\"suffix\":\"EKxtJsAghRVb\"},\"simpleName\":\"vxncuLsEVYoSuA\"}},\"shipTo\":{\"accountId\":\"IMUghAvoO\",\"accountName\":\"Xq\",\"contactAddress\":{\"addressLine1\":\"AcxR\",\"addressLine2\":\"RGykgwXBMMJqAd\",\"city\":\"IfufmoL\",\"country\":\"aIXltXPKMTMX\",\"postalCode\":\"ai\",\"state\":\"ceVeeY\"},\"contactPerson\":{\"contactNo\":\"nkQnmMPCFWgr\",\"name\":{\"firstName\":\"QFDwO\",\"lastName\":\"spnPxthSdbv\",\"middleName\":\"JIeT\",\"prefix\":\"bsXvrS\",\"suffix\":\"tBLA\"},\"simpleName\":\"qo\"}},\"shipmenStatus\":\"kWxuLijyh\",\"shipmentType\":\"\",\"shippingLabel\":\"yTNacvHYubyJb\",\"statusCode\":\"jMwjC\",\"statusDescription\":\"wgu\",\"trackingNumber\":\"\"}"
+              }
+            },
+            "401" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            }
+          },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ]
+        },
+        "scopes" : [ ],
+        "displayName" : "/generateShippingLabel",
+        "enabled" : true
+      },
+      "/trackShipment" : {
+        "post" : {
+          "summary" : "Shipment tracking",
+          "description" : "This API is used to get the tracking info of shipment",
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "trackShipment",
+            "required" : true,
+            "allowEmptyValue" : false,
+            "readOnly" : false,
+            "schema" : {
+              "application/json" : {
+                "schema" : "{\"allowEmptyValue\":false,\"properties\":{\"trackShipmentRequest\":{\"$ref\":\"#/definitions/trackShipmentRequest\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"trackShipmentRequest\",\"type\":\"ref\"}},\"type\":\"object\",\"uniqueItems\":false}",
+                "type" : "StringSchemaModel"
+              }
+            },
+            "examples" : {
+              "application/json" : "{\"trackShipmentRequest\":{\"header\":{\"country\": \"USA\",\"transactionID\": \"12345ABC\", \"interfaceName\": \"Shipment\", \"operationName\": \"trackShipment\", \"actions\": \"trackShipment\", \"customerID\": \"Beesion\", \"programID\":\"Verso\", \"channelID\":\"Lease\", \"source\":\"Beesion\", \"target\":\"ERP\", \"timestamp\":\"2017-10-23\"},\"body\": {\"trackingNumber\":\"1234\"}}}"
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Successful",
+              "schema" : {
+                "application/json" : {
+                  "type" : "ref",
+                  "$ref" : "#/definitions/trackShipmentResponse",
+                  "simpleRef" : "trackShipmentResponse",
+                  "refFormat" : "INTERNAL"
+                }
+              }
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "mockedResponses" : {
+            "200" : {
+              "responseBody" : {
+                "application/json" : "{\"expectedDeliveryDate\":\"jOxURMvIx\",\"notes\":\"XHQWFfrUwGc\",\"shipFrom\":{\"accountName\":\"QE\",\"contactAddress\":{\"addressLine1\":\"B\",\"addressLine2\":\"CLuIyIYLdJOiMU\",\"city\":\"CpDwKJtKo\",\"country\":\"M\",\"postalCode\":\"DrhvW\",\"state\":\"IueVx\"}},\"shipTo\":{\"accountName\":\"AoWnYJwSpeH\",\"contactAddress\":{\"addressLine1\":\"R\",\"addressLine2\":\"mco\",\"city\":\"bKSu\",\"country\":\"Ml\",\"postalCode\":\"Feiv\",\"state\":\"j\"}},\"shippingMethod\":\"CR\",\"statusCode\":\"I\",\"statusDescription\":\"sySCj\",\"trackingNumber\":\"rUdoimf\",\"trackingStatus\":\"ty\"}"
+              }
+            },
+            "401" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            }
+          },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ]
+        },
+        "scopes" : [ ],
+        "displayName" : "/trackShipment",
+        "enabled" : true
+      },
+      "/sendShipmentUpdates" : {
+        "post" : {
+          "summary" : "Shipment Updates",
+          "description" : "This service will be used for used by transportation company to send updates.",
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "sendShipmentUpdates",
+            "required" : true,
+            "allowEmptyValue" : false,
+            "readOnly" : false,
+            "schema" : {
+              "application/json" : {
+                "schema" : "{\"allowEmptyValue\":false,\"example\":\"\\\"\\\"\",\"properties\":{\"sendShipmentUpdatesRequest\":{\"$ref\":\"#/definitions/sendShipmentUpdatesRequest\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"sendShipmentUpdatesRequest\",\"type\":\"ref\"}},\"type\":\"object\",\"uniqueItems\":false}",
+                "type" : "StringSchemaModel"
+              }
+            },
+            "examples" : { }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Successful"
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "mockedResponses" : {
+            "200" : {
+              "responseBody" : {
+                "application/json" : "{\n         \"sendShipmentUpdatesResponse\":{\n                      \"statusCode\":\"SC01\",\n                       \"statusDescription\":\"Success\"\n             }\n}"
+              }
+            },
+            "401" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            }
+          },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ]
+        },
+        "scopes" : [ ],
+        "displayName" : "/sendShipmentUpdates",
+        "enabled" : true
+      },
+      "/bookShipment" : {
+        "post" : {
+          "summary" : "Shipment booking",
+          "description" : "This service will be used to book a shipment with the transportation company for a returned device(s).",
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "bookShipment",
+            "required" : true,
+            "allowEmptyValue" : false,
+            "readOnly" : false,
+            "schema" : {
+              "application/json" : {
+                "schema" : "{\"allowEmptyValue\":false,\"properties\":{\"bookShipmentRequest\":{\"$ref\":\"#/definitions/bookShipmentRequest\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"bookShipmentRequest\",\"type\":\"ref\"}},\"type\":\"object\",\"uniqueItems\":false}",
+                "type" : "StringSchemaModel"
+              }
+            },
+            "examples" : {
+              "application/json" : "{\"bookShipmentRequest\":{\"header\":{\"country\":\"USA\",\"transactionID\":\"12345ABC\",\"interfaceName\":\"Shipment\",\"operationName\":\"bookShipment\",\"actions\":\"bookShipment\",\"customerID\":\"Beesion\",\"programID\":\"Verso\",\"channelID\":\"Lease\",\"source\":\"Beesion\",\"target\":\"ERP\",\"timestamp\":\"2018-04-19 10:10:10.121\"},\"body\":{\"customerId\":\"\",\"referenceId\":\"RMA125451\",\"referenceId1\":\"DEP123\",\"shipmentDate\":\"2018-04-19 10:10:10.121\",\"shipmentType\":\"package\",\"dimensions\":[{\"UOM\":\"inches\",\"length\":\"12\",\"height\":\"12\",\"width\":\"12\",\"weight\":\"10\",\"weightUOM\":\"lbs\"}],\"shipmentMethod\":\"Air\",\"labelFormat\":\"pdf\",\"shipFrom\":{\"accountId\":\"12345\",\"accountName\":\"John T\",\"contactAddress\":{\"addressLine1\":\" 123 abc st\",\"addressLine2\":\"# 104\",\"city\":\"Libertyville\",\"state\":\"IL\",\"country\":\"UA\",\"postalCode\":\"60060\"},\"contactPerson\":{\"simpleName\":\"xyz\",\"contactNo\":\"2222\",\"name\":{\"prefix\":\"Mr\",\"firstName\":\"John\",\"middleName\":\"T\",\"lastName\":\"Cena\",\"suffix\":\"\"}}},\"shipTo\":{\"accountId\":\"12345\",\"accountName\":\"John T\",\"contactAddress\":{\"addressLine1\":\" 123 abc st\",\"addressLine2\":\"# 104\",\"city\":\"Libertyville\",\"state\":\"IL\",\"country\":\"UA\",\"postalCode\":\"60060\"},\"contactPerson\":{\"simpleName\":\"xyz\",\"contactNo\":\"2222\",\"name\":{\"prefix\":\"Mr\",\"firstName\":\"John\",\"middleName\":\"T\",\"lastName\":\"Cena\",\"suffix\":\"\"}}},\"itemDetails\":[{\"itemIdentifier\":\"123\",\"name\":\"iphone\",\"shortDescription\":\"test\",\"longDescription\":\"\",\"quantity\":\"1\",\"itemVolume\":\"\",\"itemVolumeUOM\":\"EA\",\"DGShippingCode\":\"123\",\"DGFlag\":\"false\",\"itemWeight\":\"3\",\"itemWeightUOM\":\"lbs\"}]}}}  "
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Successful",
+              "schema" : {
+                "application/json" : {
+                  "type" : "ref",
+                  "$ref" : "#/definitions/bookShipmentResponse",
+                  "simpleRef" : "bookShipmentResponse",
+                  "refFormat" : "INTERNAL"
+                }
+              }
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "mockedResponses" : {
+            "200" : {
+              "responseBody" : {
+                "application/json" : "{\"UOM\":\"bgG\",\"barCode\":\"\",\"customerId\":\"UaasecfSLVwSE\",\"expectedDeliveryDate\":\"H\",\"imageURL\":\"\",\"labelFormat\":\"edW\",\"referenceId\":\"u\",\"shipmenStatus\":\"u\",\"shipmentCharges\":[{\"transposrtationCharges\":6.369906956609312E8,\"serviceOptionsCharges\":3.642412436592648E8,\"totalCharges\":8.738268816613812E8,\"currencyCode\":\"BHfOftumsEJoCE\"},{\"transposrtationCharges\":6.743757449048643E8,\"serviceOptionsCharges\":7.364203177736366E8,\"totalCharges\":1.1289419418166182E9,\"currencyCode\":\"oCU\"}],\"shipmentMethod\":\"FOIJpHTQR\",\"shipmentType\":\"rnPVhWTLqcVuxE\",\"shippingLabel\":\"cR\",\"statusCode\":\"cu\",\"statusDescription\":\"qWiscMsigWcJ\",\"trackingNumber\":\"uKxKxtB\",\"weight\":1.4822678992788866E9}"
+              }
+            },
+            "401" : {
+              "responseBody" : {
+                "application/json" : ""
+              }
+            }
+          },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ]
+        },
+        "scopes" : [ ],
+        "displayName" : "/bookShipment",
+        "enabled" : true
+      }
+    },
+    "securityDefinitions" : {
+      "apiKey" : {
+        "in" : "header",
+        "name" : "apikey",
+        "type" : "apiKey"
+      }
+    },
+    "definitions" : {
+      "trackShipmentRequest" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"body\":{\"type\":\"ref\",\"$ref\":\"#/definitions/trackShipmentRequestBody\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"trackShipmentRequestBody\"},\"header\":{\"type\":\"ref\",\"$ref\":\"#/definitions/requestHeader\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"requestHeader\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "address" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"addressLine1\":{\"type\":\"string\"},\"addressLine2\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"firstName\":{\"type\":\"string\"},\"lastName\":{\"type\":\"string\"},\"phoneNumber\":{\"type\":\"string\"},\"postalCode\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "schedulePickupRequestBody" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"pickUpDateTime\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "schedulePickupResponse" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"barCode\":{\"type\":\"string\"},\"expectedDeliveryDate\":{\"type\":\"string\"},\"pickUpDateTime\":{\"type\":\"string\"},\"shipFrom\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shipTo\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shipmentStatus\":{\"type\":\"string\"},\"shipmentType\":{\"type\":\"string\"},\"shippingMethod\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "contactPerson" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"contactNo\":{\"type\":\"string\"},\"name\":{\"type\":\"ref\",\"$ref\":\"#/definitions/name\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"name\"},\"simpleName\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "ship" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"accountName\":{\"type\":\"string\"},\"contactAddress\":{\"type\":\"ref\",\"$ref\":\"#/definitions/contactAddress\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"contactAddress\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "bookShipmentResponse" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"UOM\":{\"type\":\"string\"},\"barCode\":{\"type\":\"string\"},\"customerId\":{\"type\":\"string\"},\"expectedDeliveryDate\":{\"type\":\"string\"},\"imageURL\":{\"type\":\"string\"},\"labelFormat\":{\"type\":\"string\"},\"referenceId\":{\"type\":\"string\"},\"shipmenStatus\":{\"type\":\"string\"},\"shipmentCharges\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"currencyCode\":{\"type\":\"string\"},\"serviceOptionsCharges\":{\"type\":\"number\"},\"totalCharges\":{\"type\":\"number\"},\"transposrtationCharges\":{\"type\":\"number\"}}}},\"shipmentMethod\":{\"type\":\"string\"},\"shipmentType\":{\"type\":\"string\"},\"shippingLabel\":{\"type\":\"string\"},\"statusCode\":{\"type\":\"string\"},\"statusDescription\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"},\"weight\":{\"type\":\"number\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "trackShipmentRequestBody" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"trackingNumber\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "schedulePickupRequest" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"body\":{\"type\":\"ref\",\"$ref\":\"#/definitions/schedulePickupRequestBody\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"schedulePickupRequestBody\"},\"header\":{\"type\":\"ref\",\"$ref\":\"#/definitions/requestHeader\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"requestHeader\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "bookShipmentRequest" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"body\":{\"type\":\"ref\",\"$ref\":\"#/definitions/bookShipmentRequestBody\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"bookShipmentRequestBody\"},\"header\":{\"type\":\"ref\",\"$ref\":\"#/definitions/requestHeader\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"requestHeader\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "shipmentDetails" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"accountId\":{\"type\":\"string\"},\"accountName\":{\"type\":\"string\"},\"contactAddress\":{\"type\":\"ref\",\"$ref\":\"#/definitions/contactAddress\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"contactAddress\"},\"contactPerson\":{\"type\":\"ref\",\"$ref\":\"#/definitions/contactPerson\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"contactPerson\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "trackShipmentResponse" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"expectedDeliveryDate\":{\"type\":\"string\"},\"notes\":{\"type\":\"string\"},\"shipFrom\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shipTo\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shippingMethod\":{\"type\":\"string\"},\"statusCode\":{\"type\":\"string\"},\"statusDescription\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"},\"trackingStatus\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "generateShippingLabelResponse" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"barCode\":{\"type\":\"string\"},\"customerId\":{\"type\":\"string\"},\"expectedDeliveryDate\":{\"type\":\"string\"},\"imageURL\":{\"type\":\"string\"},\"labelFormat\":{\"type\":\"string\"},\"referenceId\":{\"type\":\"string\"},\"shipFrom\":{\"type\":\"ref\",\"$ref\":\"#/definitions/shipmentDetails\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"shipmentDetails\"},\"shipTo\":{\"type\":\"ref\",\"$ref\":\"#/definitions/shipmentDetails\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"shipmentDetails\"},\"shipmenStatus\":{\"type\":\"string\"},\"shipmentType\":{\"type\":\"string\"},\"shippingLabel\":{\"type\":\"string\"},\"statusCode\":{\"type\":\"string\"},\"statusDescription\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "name" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"firstName\":{\"type\":\"string\"},\"lastName\":{\"type\":\"string\"},\"middleName\":{\"type\":\"string\"},\"prefix\":{\"type\":\"string\"},\"suffix\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "sendShipmentUpdatesRequestBody" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"boxQuantity\":{\"type\":\"number\"},\"dateTime\":{\"type\":\"string\"},\"deliveryAttempt\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"licensePlateNumber\":{\"type\":\"string\"},\"manifestID\":{\"type\":\"string\"},\"packageStatus\":{\"type\":\"string\"},\"reason\":{\"type\":\"string\"},\"receivingLocationID\":{\"type\":\"string\"},\"referenceID1\":{\"type\":\"string\"},\"referenceID2\":{\"type\":\"string\"},\"referenceID3\":{\"type\":\"string\"},\"senderAppID\":{\"type\":\"string\"},\"shipFrom\":{\"type\":\"ref\",\"$ref\":\"#/definitions/address\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"address\"},\"shipTo\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shipmentType\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"},\"userName\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "generateShippingLabelRequest" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"RMANumber\":{\"type\":\"string\"},\"referenceID\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "contactAddress" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"addressLine1\":{\"type\":\"string\"},\"addressLine2\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"postalCode\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "requestHeader" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"actions\":{\"type\":\"string\"},\"channelID\":{\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"customerID\":{\"type\":\"string\"},\"interfaceName\":{\"type\":\"string\"},\"operationName\":{\"type\":\"string\"},\"programID\":{\"type\":\"string\"},\"source\":{\"type\":\"string\"},\"target\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"},\"transactionID\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "sendShipmentManifestRequestBody" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"boxQuantity\":{\"type\":\"number\"},\"carrierName\":{\"type\":\"string\"},\"expectedDeliveryDate\":{\"type\":\"string\"},\"licensePlateNumber\":{\"type\":\"string\"},\"manifestID\":{\"type\":\"string\"},\"receivingLocationID\":{\"type\":\"string\"},\"referenceID1\":{\"type\":\"string\"},\"referenceID2\":{\"type\":\"string\"},\"referenceID3\":{\"type\":\"string\"},\"shipFrom\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shipTo\":{\"type\":\"ref\",\"$ref\":\"#/definitions/ship\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"ship\"},\"shipmentType\":{\"type\":\"string\"},\"trackingNumber\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "bookShipmentRequestBody" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"customerId\":{\"type\":\"string\"},\"dimensions\":{\"type\":\"ref\",\"$ref\":\"#/definitions/dimensions\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"dimensions\"},\"itemDetails\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"DGFlag\":{\"type\":\"string\"},\"DGShippingCode\":{\"type\":\"string\"},\"itemIdentifier\":{\"type\":\"string\"},\"itemVolume\":{\"type\":\"string\"},\"itemVolumeUOM\":{\"type\":\"string\"},\"itemWeight\":{\"type\":\"string\"},\"itemWeightUOM\":{\"type\":\"string\"},\"longDescription\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"string\"},\"shortDescription\":{\"type\":\"string\"}}}},\"labelFormat\":{\"type\":\"string\"},\"referenceId\":{\"type\":\"string\"},\"referenceId1\":{\"type\":\"string\"},\"shipFrom\":{\"type\":\"ref\",\"$ref\":\"#/definitions/shipmentDetails\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"shipmentDetails\"},\"shipTo\":{\"type\":\"ref\",\"$ref\":\"#/definitions/shipmentDetails\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"shipmentDetails\"},\"shipmentDate\":{\"type\":\"string\"},\"shipmentMethod\":{\"type\":\"string\"},\"shipmentType\":{\"type\":\"string\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "sendShipmentManifestRequest" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"body\":{\"type\":\"object\",\"properties\":{\"shipmentManifest\":{\"type\":\"array\",\"items\":{\"type\":\"ref\",\"$ref\":\"#/definitions/sendShipmentManifestRequestBody\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"sendShipmentManifestRequestBody\"}}}},\"header\":{\"type\":\"ref\",\"$ref\":\"#/definitions/requestHeader\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"requestHeader\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "sendShipmentUpdatesRequest" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"body\":{\"type\":\"ref\",\"$ref\":\"#/definitions/sendShipmentUpdatesRequestBody\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"sendShipmentUpdatesRequestBody\"},\"header\":{\"type\":\"ref\",\"$ref\":\"#/definitions/requestHeader\",\"refFormat\":\"INTERNAL\",\"simpleRef\":\"requestHeader\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      },
+      "dimensions" : {
+        "schema" : "{\"type\":\"object\",\"properties\":{\"UOM\":{\"type\":\"string\"},\"height\":{\"type\":\"number\"},\"length\":{\"type\":\"number\"},\"weight\":{\"type\":\"string\"},\"weightUOM\":{\"type\":\"string\"},\"width\":{\"type\":\"number\"}},\"allowEmptyValue\":false,\"uniqueItems\":false}",
+        "type" : "StringSchemaModel"
+      }
+    },
+    "parameters" : { },
+    "type" : "rest"
+  },
+  "nativeEndpoint" : [ {
+    "passSecurityHeaders" : true,
+    "uri" : "http://${BS_ESB_IS}/rest/BstarShipment/restresources",
+    "connectionTimeoutDuration" : 0,
+    "alias" : false
+  }, {
+    "passSecurityHeaders" : true,
+    "uri" : "https://${BS_ESB_IS}/rest/BstarShipment/restresources",
+    "connectionTimeoutDuration" : 0,
+    "alias" : false
+  } ],
+  "apiName" : "Shipment",
+  "apiVersion" : "1.0",
+  "apiDescription" : "This API will provide the Shipment services.",
+  "maturityState" : "Test",
+  "isActive" : true,
+  "type" : "REST",
+  "owner" : "RK20844",
+  "policies" : [ "450fa887-dad0-4e12-92c8-0c244ad5c889" ],
+  "referencedFiles" : {
+    "Shipment.yaml" : "swagger: '2.0'\ninfo:\n  description: This API will provide the Shipment services.\n  version: '1.0'\n  title: Shipment\nhost: '${BS_ESB_IS}'\nbasePath: '/rest/BstarShipment/restresources'\nschemes:\n  - http\n  - https\n  \nconsumes:\n  - application/json\nproduces:\n  - application/json\n\nsecurity:\n  - apiKey: []\n  \npaths:\n  /schedulePickup:\n    post:\n      summary: Schedule Pickup\n      description: This API is used to scheduling a Pickup\n      parameters:\n        - in: body\n          name: schedulePickup\n          required: true\n          schema:\n            type: object\n            properties:\n              schedulePickupRequest:\n                $ref: \"#/definitions/schedulePickupRequest\"\n            example: >-\n              {\"schedulePickupRequest\":{\"header\":{\"country\": \"USA\",\"transactionID\": \"12345ABC\", \"interfaceName\": \"Shipment\", n \"operationName\": \"schedulePickup\", \"actions\": \"schedulePickup\", \"customerID\": \"Beesion\", \"programID\":\"Verso\", n\"channelID\":\"Lease\", \"source\":\"Beesion\", \"target\":\"ERP\", \"timestamp\":\"2017-10-23\"},\"body\":n {\"trackingNumber\":\"1234\", \"pickUpDateTime\":\"2017-10-23\"}}}\n      responses:\n        '200':\n          description: Successful\n          schema:\n            $ref: '#/definitions/schedulePickupResponse'\n        '401':\n          description: Access Denied\n          \n  /generateShippingLabel:\n    post:\n      summary: Label generation\n      description: This API will be used to retrieve the shipping label information\n      parameters:\n        - in: body\n          name: generateShippingLabel\n          required: true\n          schema:\n            type: object\n            properties:\n              generateShippingLabelRequest:\n                $ref: \"#/definitions/generateShippingLabelRequest\"\n            example: >-\n              {\"generateShippingLabelRequest\":{\"header\":{\"country\": \"USA\",\"transactionID\": \"12345ABC\", \"interfaceName\": \"Shipment\", \"operationName\": \"generateShippingLabel\", \"actions\": \"generateShippingLabel\", \"customerID\": \"Beesion\", \"programID\":\"Verso\", \"channelID\":\"Lease\", \"source\":\"Beesion\", \"target\":\"ERP\", \"timestamp\":\"2017-10-23\"},\"body\": {\"trackingNumber\":\"1234\", \"referenceId\":\"1245\", \"RMANumber\":\"RMA123\"}}}\n      responses:\n        '200':\n          description: Successful\n          schema:\n            $ref: '#/definitions/generateShippingLabelResponse'\n        '401':\n          description: Access Denied\n          \n  /trackShipment:\n    post:\n      summary: Shipment tracking\n      description: This API is used to get the tracking info of shipment\n      parameters:\n        - in: body\n          name: trackShipment\n          required: true\n          schema:\n            type: object\n            properties:\n              trackShipmentRequest:\n                $ref: \"#/definitions/trackShipmentRequest\"\n            example: >-\n              {\"trackShipmentRequest\":{\"header\":{\"country\": \"USA\",\"transactionID\": \"12345ABC\", \"interfaceName\": \"Shipment\", \"operationName\": \"trackShipment\", \"actions\": \"trackShipment\", \"customerID\": \"Beesion\", \"programID\":\"Verso\", \"channelID\":\"Lease\", \"source\":\"Beesion\", \"target\":\"ERP\", \"timestamp\":\"2017-10-23\"},\"body\": {\"trackingNumber\":\"1234\"}}}\n      responses:\n        '200':\n          description: Successful\n          schema:\n            $ref: '#/definitions/trackShipmentResponse'\n        '401':\n          description: Access Denied\n          \n  /sendShipmentUpdates:\n    post:\n      summary: Shipment Updates\n      description: This service will be used for used by transportation company to send updates.\n      parameters:\n        - in: body\n          name: sendShipmentUpdates\n          required: true\n          schema:\n            type: object\n            properties:\n              sendShipmentUpdatesRequest:\n                $ref: \"#/definitions/sendShipmentUpdatesRequest\"\n            example: >-\n              \n      responses:\n        '200':\n          description: Successful\n        '401':\n          description: Access Denied\n          \n  /sendShipmentManifest:\n    post:\n      summary: Shipment Updates\n      description: This service will be used for used by transportation company to send manifest data.\n      parameters:\n        - in: body\n          name: sendShipmentUpdates\n          required: true\n          schema:\n            type: object\n            properties:\n              sendShipmentUpdatesRequest:\n                $ref: \"#/definitions/sendShipmentManifestRequest\"\n            example: >-\n              \n      responses:\n        '200':\n          description: Successful\n        '401':\n          description: Access Denied\n\n            \n  /bookShipment:\n    post:\n      summary: Shipment booking\n      description: This service will be used to book a shipment with the transportation company for a returned device(s).\n      parameters:\n        - in: body\n          name: bookShipment\n          required: true\n          schema:\n            type: object\n            properties:\n              bookShipmentRequest:\n                $ref: \"#/definitions/bookShipmentRequest\"\n            example: >-\n              {\"bookShipmentRequest\":{\"header\":{\"country\":\"USA\",\"transactionID\":\"12345ABC\",\"interfaceName\":\"Shipment\",\"operationName\":\"bookShipment\",\"actions\":\"bookShipment\",\"customerID\":\"Beesion\",\"programID\":\"Verso\",\"channelID\":\"Lease\",\"source\":\"Beesion\",\"target\":\"ERP\",\"timestamp\":\"2018-04-19 10:10:10.121\"},\"body\":{\"customerId\":\"\",\"referenceId\":\"RMA125451\",\"referenceId1\":\"DEP123\",\"shipmentDate\":\"2018-04-19 10:10:10.121\",\"shipmentType\":\"package\",\"dimensions\":[{\"UOM\":\"inches\",\"length\":\"12\",\"height\":\"12\",\"width\":\"12\",\"weight\":\"10\",\"weightUOM\":\"lbs\"}],\"shipmentMethod\":\"Air\",\"labelFormat\":\"pdf\",\"shipFrom\":{\"accountId\":\"12345\",\"accountName\":\"John T\",\"contactAddress\":{\"addressLine1\":\" 123 abc st\",\"addressLine2\":\"# 104\",\"city\":\"Libertyville\",\"state\":\"IL\",\"country\":\"UA\",\"postalCode\":\"60060\"},\"contactPerson\":{\"simpleName\":\"xyz\",\"contactNo\":\"2222\",\"name\":{\"prefix\":\"Mr\",\"firstName\":\"John\",\"middleName\":\"T\",\"lastName\":\"Cena\",\"suffix\":\"\"}}},\"shipTo\":{\"accountId\":\"12345\",\"accountName\":\"John T\",\"contactAddress\":{\"addressLine1\":\" 123 abc st\",\"addressLine2\":\"# 104\",\"city\":\"Libertyville\",\"state\":\"IL\",\"country\":\"UA\",\"postalCode\":\"60060\"},\"contactPerson\":{\"simpleName\":\"xyz\",\"contactNo\":\"2222\",\"name\":{\"prefix\":\"Mr\",\"firstName\":\"John\",\"middleName\":\"T\",\"lastName\":\"Cena\",\"suffix\":\"\"}}},\"itemDetails\":[{\"itemIdentifier\":\"123\",\"name\":\"iphone\",\"shortDescription\":\"test\",\"longDescription\":\"\",\"quantity\":\"1\",\"itemVolume\":\"\",\"itemVolumeUOM\":\"EA\",\"DGShippingCode\":\"123\",\"DGFlag\":\"false\",\"itemWeight\":\"3\",\"itemWeightUOM\":\"lbs\"}]}}}  \n      responses:\n        '200':\n          description: Successful\n          schema:\n            $ref: '#/definitions/bookShipmentResponse'\n        '401':\n          description: Access Denied\n          \nsecurityDefinitions:\n  apiKey:\n    type: apiKey\n    name: apikey\n    in: header\n\ndefinitions:\n  \n  schedulePickupRequest:\n    type: object\n    properties:\n      header:\n        $ref: \"#/definitions/requestHeader\"\n      body:\n        $ref: '#/definitions/schedulePickupRequestBody'\n        \n  trackShipmentRequest:\n    type: object\n    properties:\n      header:\n        $ref: \"#/definitions/requestHeader\"\n      body:\n        $ref: '#/definitions/trackShipmentRequestBody'\n        \n  sendShipmentUpdatesRequest:\n    type: object\n    properties:\n      header:\n        $ref: \"#/definitions/requestHeader\"\n      body:\n        $ref: '#/definitions/sendShipmentUpdatesRequestBody'\n  \n  sendShipmentManifestRequest:\n    type: object\n    properties:\n      header:\n        $ref: \"#/definitions/requestHeader\"\n      body:\n        type: object\n        properties:\n          shipmentManifest:\n            type: array\n            items:\n              $ref: '#/definitions/sendShipmentManifestRequestBody'\n        \n  \n  bookShipmentRequest:\n    type: object\n    properties:\n      header:\n        $ref: \"#/definitions/requestHeader\"\n      body:\n        $ref: '#/definitions/bookShipmentRequestBody'      \n  \n  trackShipmentRequestBody:\n    type: object\n    properties:\n      trackingNumber:\n        type: string\n  \n  address:\n    type: object\n    properties:\n      postalCode:\n        type: string\n      firstName:\n        type: string\n      lastName:\n        type: string\n      country:\n        type: string\n      city:\n        type: string\n      addressLine1:\n        type: string\n      addressLine2:\n        type: string\n      state:\n        type: string\n      phoneNumber:\n        type: string\n        \n  schedulePickupResponse:\n    type: object\n    properties:\n      shipFrom:\n        $ref: '#/definitions/ship'\n      expectedDeliveryDate:\n        type: string\n      shippingMethod:\n        type: string\n      trackingNumber:\n        type: string\n      shipmentStatus:\n        type: string\n      shipmentType:\n        type: string\n      pickUpDateTime:\n        type: string\n      barCode:\n        type: string\n      shipTo:\n        $ref: '#/definitions/ship'\n        \n  ship:\n    type: object\n    properties:\n      accountName:\n        type: string\n      contactAddress:\n        $ref: '#/definitions/contactAddress'\n        \n  contactPerson:\n    type: object\n    properties:\n      simpleName:\n        type: string\n      name:\n        $ref: '#/definitions/name'\n      contactNo:\n        type: string\n        \n  bookShipmentResponse:\n    type: object\n    properties:\n      statusDescription:\n        type: string\n      expectedDeliveryDate:\n        type: string\n      customerId:\n        type: string\n      shippingLabel:\n        type: string\n      imageURL:\n        type: string\n      labelFormat:\n        type: string\n      shipmenStatus:\n        type: string\n      trackingNumber:\n        type: string\n      referenceId:\n        type: string\n      shipmentType:\n        type: string\n      shipmentMethod:\n        type: string\n      barCode:\n        type: string\n      statusCode:\n        type: string\n      shipmentCharges:\n        type: array\n        items:\n          type: object\n          properties:\n            currencyCode:\n              type: string\n            transposrtationCharges:\n              type: number\n            serviceOptionsCharges:\n              type: number\n            totalCharges:\n              type: number\n      weight:\n        type: number\n      UOM:\n        type: string\n        \n  schedulePickupRequestBody:\n    type: object\n    properties:\n      trackingNumber:\n        type: string\n      pickUpDateTime:\n        type: string\n        \n  bookShipmentRequestBody:\n    type: object\n    properties:\n      customerId:\n        type: string\n      referenceId:\n        type: string\n      referenceId1:\n        type: string\n      shipmentType:\n        type: string\n      shipmentMethod:\n        type: string\n      shipmentDate:\n        type: string\n      shipFrom:\n        $ref: '#/definitions/shipmentDetails'\n      shipTo:\n        $ref: '#/definitions/shipmentDetails'\n      itemDetails:\n        type: array\n        items:\n          properties:\n            longDescription:\n              type: string\n            itemVolume:\n              type: string\n            quantity:\n              type: string\n            itemVolumeUOM:\n              type: string\n            name:\n              type: string\n            DGShippingCode:\n              type: string\n            itemIdentifier:\n              type: string\n            shortDescription:\n              type: string\n            DGFlag:\n              type: string\n            itemWeightUOM:\n              type: string\n            itemWeight:\n              type: string\n      labelFormat:\n        type: string\n      dimensions:\n        $ref: '#/definitions/dimensions'\n        \n  dimensions:\n    type: object\n    properties:\n        UOM:\n          type: string\n        length:\n          type: number\n        height:\n          type: number\n        width:\n          type: number\n        weight:\n          type: string\n        weightUOM:\n          type: string\n        \n\n  shipmentDetails:\n    type: object\n    properties:\n      accountId:\n        type: string\n      accountName:\n        type: string\n      contactPerson:\n        $ref: '#/definitions/contactPerson'\n      contactAddress:\n        $ref: '#/definitions/contactAddress'\n        \n  trackShipmentResponse:\n    type: object\n    properties:\n      shipFrom:\n        $ref: '#/definitions/ship'\n      statusDescription:\n        type: string\n      notes:\n        type: string\n      expectedDeliveryDate:\n        type: string\n      shippingMethod:\n        type: string\n      trackingStatus:\n        type: string\n      trackingNumber:\n        type: string\n      statusCode:\n        type: string\n      shipTo:\n        $ref: '#/definitions/ship'\n        \n  generateShippingLabelResponse:\n    type: object\n    properties:\n      shipFrom:\n        $ref: '#/definitions/shipmentDetails'\n      statusDescription:\n        type: string\n      expectedDeliveryDate:\n        type: string\n      customerId:\n        type: string\n      shippingLabel:\n        type: string\n      imageURL:\n        type: string\n      labelFormat:\n        type: string  \n      shipmenStatus:\n        type: string\n      trackingNumber:\n        type: string\n      referenceId:\n        type: string\n      shipmentType:\n        type: string\n      barCode:\n        type: string\n      statusCode:\n        type: string\n      shipTo:\n        $ref: '#/definitions/shipmentDetails'\n        \n  name:\n    type: object\n    properties:\n      firstName:\n        type: string\n      lastName:\n        type: string\n      prefix:\n        type: string\n      middleName:\n        type: string\n      suffix:\n        type: string\n        \n  generateShippingLabelRequest:\n    type: object\n    properties:\n      RMANumber:\n        type: string\n      trackingNumber:\n        type: string\n      referenceID:\n        type: string\n        \n  requestHeader:\n    type: object\n    properties:\n      country:\n        type: string\n      customerID:\n        type: string\n      operationName:\n        type: string\n      interfaceName:\n        type: string\n      source:\n        type: string\n      actions:\n        type: string\n      transactionID:\n        type: string\n      programID:\n        type: string\n      channelID:\n        type: string\n      target:\n        type: string\n      timestamp:\n        type: string\n        \n  contactAddress:\n    type: object\n    properties:\n      postalCode:\n        type: string\n      country:\n        type: string\n      city:\n        type: string\n      addressLine1:\n        type: string\n      addressLine2:\n        type: string\n      state:\n        type: string\n        \n  sendShipmentUpdatesRequestBody:\n    type: object\n    properties:\n      manifestID:\n        type: string\n      dateTime:\n        type: string\n      reason:\n        type: string\n      shipFrom:\n        $ref: '#/definitions/address'\n      receivingLocationID:\n        type: string\n      shipTo:\n        $ref: '#/definitions/ship'\n      deliveryAttempt:\n        type: string\n      description:\n        type: string\n      trackingNumber:\n        type: string\n      shipmentType:\n        type: string\n      packageStatus:\n        type: string\n      referenceID1:\n        type: string\n      referenceID2:\n        type: string\n      referenceID3:\n        type: string\n      senderAppID:\n        type: string\n      userName:\n        type: string\n      licensePlateNumber:\n        type: string\n      boxQuantity:\n        type: number\n      \n  sendShipmentManifestRequestBody:\n    type: object\n    properties:\n      manifestID:\n        type: string\n      carrierName:\n        type: string\n      shipFrom:\n        $ref: '#/definitions/ship'\n      receivingLocationID:\n        type: string\n      shipTo:\n        $ref: '#/definitions/ship'\n      trackingNumber:\n        type: string\n      shipmentType:\n        type: string\n      expectedDeliveryDate:\n        type: string\n      referenceID1:\n        type: string\n      referenceID2:\n        type: string\n      referenceID3:\n        type: string\n      licensePlateNumber:\n        type: string\n      boxQuantity:\n        type: number\n      \n  \n      \n      \n        \n  \n      \n"
+  },
+  "scopes" : [ ],
+  "publishedPortals" : [ ],
+  "creationDate" : "2018-03-07 14:47:16 GMT",
+  "lastModified" : "2018-08-30 05:10:40 GMT",
+  "systemVersion" : 1,
+  "mockService" : {
+    "enableMock" : false
+  },
+  "id" : "bdeb2e2c-c755-461f-942c-979b32beedd6"
+}

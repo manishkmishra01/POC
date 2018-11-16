@@ -1,0 +1,41 @@
+{
+  "id" : "450fa887-dad0-4e12-92c8-0c244ad5c889",
+  "names" : [ {
+    "value" : "Default Policy for API Shipment",
+    "locale" : "English"
+  } ],
+  "descriptions" : [ {
+    "value" : "",
+    "locale" : "English"
+  } ],
+  "scope" : {
+    "scopeConditions" : [ ]
+  },
+  "policyEnforcements" : [ {
+    "enforcements" : [ {
+      "enforcementObjectId" : "b1f9057a-450b-4593-8d10-a2f498bd4a56"
+    }, {
+      "enforcementObjectId" : "7cf53db1-4d15-4e90-bbf3-dbc260548d7e"
+    } ],
+    "stageKey" : "routing"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "0dea0160-35f9-4a58-95b8-73711c9909cf"
+    } ],
+    "stageKey" : "LMT"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "b10a574d-63e5-417b-afe6-62fdb8ca4c22"
+    } ],
+    "stageKey" : "IAM"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "45ecf2b7-70dd-4e9f-9b89-0582eaf834a8"
+    } ],
+    "stageKey" : "transport"
+  } ],
+  "policyScope" : "SERVICE",
+  "systemPolicy" : false,
+  "active" : false,
+  "global" : false
+}

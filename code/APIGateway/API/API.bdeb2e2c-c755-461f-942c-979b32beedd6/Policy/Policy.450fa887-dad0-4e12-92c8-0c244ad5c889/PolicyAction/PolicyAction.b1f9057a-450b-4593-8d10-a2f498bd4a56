@@ -1,0 +1,103 @@
+{
+  "id" : "b1f9057a-450b-4593-8d10-a2f498bd4a56",
+  "names" : [ {
+    "value" : "Context-based Routing",
+    "locale" : "en"
+  } ],
+  "templateKey" : "contextBasedRouting",
+  "parameters" : [ {
+    "templateKey" : "routeTo",
+    "parameters" : [ {
+      "templateKey" : "endpointUri",
+      "values" : [ "http://${BS_ESB_IS}/rest/BstarShipment/restresources/${sys:resource_path}" ]
+    }, {
+      "templateKey" : "method",
+      "values" : [ "CUSTOM" ]
+    } ]
+  }, {
+    "templateKey" : "contextRules",
+    "parameters" : [ {
+      "templateKey" : "name",
+      "values" : [ "Beesion-sendShipmentUpdates" ]
+    }, {
+      "templateKey" : "contextConditionOperator",
+      "values" : [ "or" ]
+    }, {
+      "templateKey" : "routeTo",
+      "parameters" : [ {
+        "templateKey" : "endpointUri",
+        "values" : [ "https://p180-env.us-east-1.elasticbeanstalk.com/rest/Shipment/sendShipmentUpdates" ]
+      }, {
+        "templateKey" : "method",
+        "values" : [ "CUSTOM" ]
+      }, {
+        "templateKey" : "sslConfig",
+        "parameters" : [ {
+          "templateKey" : "keyStoreAlias",
+          "values" : [ "BrightstarKeystore" ]
+        }, {
+          "templateKey" : "keyAlias",
+          "values" : [ "brightstar.com" ]
+        } ]
+      } ]
+    }, {
+      "templateKey" : "contextCondition",
+      "parameters" : [ {
+        "templateKey" : "conditionVariable",
+        "values" : [ "predefined" ]
+      }, {
+        "templateKey" : "conditionOperator",
+        "values" : [ "EQ" ]
+      }, {
+        "templateKey" : "conditionDataType",
+        "values" : [ "OPERATION" ]
+      }, {
+        "templateKey" : "conditionValue",
+        "values" : [ "/sendShipmentUpdates" ]
+      } ]
+    } ]
+  }, {
+    "templateKey" : "contextRules",
+    "parameters" : [ {
+      "templateKey" : "name",
+      "values" : [ "Beesion-sendShipmentManifest" ]
+    }, {
+      "templateKey" : "contextConditionOperator",
+      "values" : [ "or" ]
+    }, {
+      "templateKey" : "routeTo",
+      "parameters" : [ {
+        "templateKey" : "endpointUri",
+        "values" : [ "https://p180-env.us-east-1.elasticbeanstalk.com/rest/Shipment/sendShipmentManifest" ]
+      }, {
+        "templateKey" : "method",
+        "values" : [ "CUSTOM" ]
+      }, {
+        "templateKey" : "sslConfig",
+        "parameters" : [ {
+          "templateKey" : "keyStoreAlias",
+          "values" : [ "BrightstarKeystore" ]
+        }, {
+          "templateKey" : "keyAlias",
+          "values" : [ "brightstar.com" ]
+        } ]
+      } ]
+    }, {
+      "templateKey" : "contextCondition",
+      "parameters" : [ {
+        "templateKey" : "conditionVariable",
+        "values" : [ "predefined" ]
+      }, {
+        "templateKey" : "conditionOperator",
+        "values" : [ "EQ" ]
+      }, {
+        "templateKey" : "conditionDataType",
+        "values" : [ "OPERATION" ]
+      }, {
+        "templateKey" : "conditionValue",
+        "values" : [ "/sendShipmentManifest" ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}

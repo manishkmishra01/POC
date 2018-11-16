@@ -1,0 +1,19 @@
+{
+  "id" : "7cf53db1-4d15-4e90-bbf3-dbc260548d7e",
+  "names" : [ {
+    "value" : "Custom HTTP Header",
+    "locale" : "en"
+  } ],
+  "templateKey" : "customHttpHeaders",
+  "parameters" : [ {
+    "templateKey" : "header",
+    "parameters" : [ {
+      "templateKey" : "headerKey",
+      "values" : [ "apikey" ]
+    }, {
+      "templateKey" : "headerValue",
+      "values" : [ "aws-shipment-1234567890" ]
+    } ]
+  } ],
+  "active" : false
+}

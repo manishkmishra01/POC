@@ -1,0 +1,13 @@
+{
+  "id" : "45ecf2b7-70dd-4e9f-9b89-0582eaf834a8",
+  "names" : [ {
+    "value" : "Require HTTP / HTTPS",
+    "locale" : "en"
+  } ],
+  "templateKey" : "entryProtocolPolicy",
+  "parameters" : [ {
+    "templateKey" : "protocol",
+    "values" : [ "http" ]
+  } ],
+  "active" : false
+}

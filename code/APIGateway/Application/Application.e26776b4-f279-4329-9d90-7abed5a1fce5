@@ -1,0 +1,30 @@
+{
+  "applicationID" : "e26776b4-f279-4329-9d90-7abed5a1fce5",
+  "name" : "Shipment",
+  "owner" : "RK20844",
+  "identifiers" : [ ],
+  "contactEmails" : [ ],
+  "accessTokens" : {
+    "apiAccessKey" : {
+      "apiAccessKey" : "d736e9fe-8e33-4309-9d16-6c436e88c0a8"
+    },
+    "oauth2Token" : {
+      "type" : "confidential",
+      "clientId" : "b269b83a-551e-4425-8f36-473399f1ada5",
+      "clientSecret" : "bfb7a624-4fa1-4236-956f-9154d4a1913b",
+      "clientName" : "Shipment-75159436-9ed1-44d5-89f6-e58be8ad68c4",
+      "scopes" : [ "bdeb2e2c-c755-461f-942c-979b32beedd6" ],
+      "expirationInterval" : "3600",
+      "refreshCount" : "0",
+      "accessTokenRequestURI" : [ ],
+      "redirectUris" : [ "https://placeholder_redirect_uri" ]
+    }
+  },
+  "creationDate" : "2017-12-28 11:29:47 GMT",
+  "siteURLs" : [ ],
+  "version" : "1.0",
+  "properties" : {
+    "requesterComment" : null
+  },
+  "subscription" : false
+}
